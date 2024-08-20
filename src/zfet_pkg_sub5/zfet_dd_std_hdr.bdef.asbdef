@@ -1,0 +1,61 @@
+managed implementation in class zfet_cl_std_hdr unique;
+strict ( 1 );
+
+with draft;
+
+define behavior for ZFET_DD_STD_HDR alias Student
+persistent table zfet_t_std_hdr
+draft table zfet_dt_std_hdr
+lock master
+total etag Locallastchangedat
+authorization master ( global )
+etag master Lastchangedat
+{
+  create;
+  update;
+  delete;
+  field ( numbering : managed, readonly ) Id;
+  association _Attachments { create; with draft; }
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZFET_T_STD_HDR{
+  Id = id;
+  Firstname = firstname;
+  Lastname = lastname;
+  Age = age;
+  Course = course;
+  Courseduration = courseduration;
+  Dob = dob;
+  Gender = gender;
+  Lastchangedat = lastchangedat;
+  Locallastchangedat = locallastchangedat;
+  Status = status;
+  }
+}
+
+define behavior for ZFET_DD_STD_ATT alias Attachments
+persistent table ZFET_T_STD_ATT
+draft table ZFET_DT_STD_ATT
+lock dependent by _Student
+authorization dependent by _Student
+etag master LastChangedat
+{
+  update;
+  delete;
+  field ( readonly ) Id;
+  association _Student { with draft; }
+
+  mapping for ZFET_T_STD_ATT {
+  AttachId = attach_id;
+  Attachment = attachment;
+  Comments = comments;
+  Filename = filename;
+  Id = id;
+  Mimetype = mimetype;
+  }
+}

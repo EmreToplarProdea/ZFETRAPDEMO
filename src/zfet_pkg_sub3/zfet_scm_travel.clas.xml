@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZFET_SCM_TRAVEL</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Consumption model for client proxy - generated</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZFET_SCM_TRAVEL</CLSNAME>
+     <CMPNAME>DEF_Z_TRAVEL_AGENCY_ES_5_TYPE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Define Z_TRAVEL_AGENCY_ES5Type</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZFET_SCM_TRAVEL</CLSNAME>
+     <CMPNAME>GCS_ENTITY_SET</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal Names of the entity sets</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZFET_SCM_TRAVEL</CLSNAME>
+     <CMPNAME>GCS_ENTITY_TYPE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal names for entity types</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZFET_SCM_TRAVEL</CLSNAME>
+     <CMPNAME>MO_MODEL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Model</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZFET_SCM_TRAVEL</CLSNAME>
+     <CMPNAME>TYS_Z_TRAVEL_AGENCY_ES_5_TYPE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Z_TRAVEL_AGENCY_ES5Type</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZFET_SCM_TRAVEL</CLSNAME>
+     <CMPNAME>TYT_Z_TRAVEL_AGENCY_ES_5_TYPE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>List of Z_TRAVEL_AGENCY_ES5Type</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>DEF_Z_TRAVEL_AGENCY_ES_5_TYPE</CMPNAME>
+     <SCONAME>/IWBEP/CX_GATEWAY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gateway Exception</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

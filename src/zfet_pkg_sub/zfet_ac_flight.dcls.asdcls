@@ -1,0 +1,14 @@
+@EndUserText.label: 'Flight Access Control'
+@MappingRole: true
+define role ZFET_AC_FLIGHT {
+//    grant
+//        select
+//            on
+//               ZFET_DD_FLIGHT
+//                  where 
+//                   ( TravelStatus )                       
+//                      = aspect pfcg_auth ( ZFET_AO_ST, ZFET_AF_ST,  actvt = '02') 
+//                        and
+                        //CurrencyCode = 'EUR';
+                        
+}

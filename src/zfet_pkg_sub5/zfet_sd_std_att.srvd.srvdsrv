@@ -1,0 +1,5 @@
+@EndUserText.label: 'Attachment SD'
+define service ZFET_SD_STD_ATT {
+  expose zfet_prj_std_att;
+  expose ZFET_PRJ_STD_HDR;
+}

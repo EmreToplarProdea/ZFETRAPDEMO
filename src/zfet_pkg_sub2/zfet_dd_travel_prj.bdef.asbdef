@@ -1,0 +1,21 @@
+projection;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZFET_DD_TRAVEL_PRJ alias Travel
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Booking { create; }
+}
+
+define behavior for ZFET_DD_BOOKING_PRJ alias Booking
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Travel;
+}

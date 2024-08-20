@@ -1,0 +1,29 @@
+managed implementation in class zfet_cl_std unique;
+strict;
+
+define behavior for ZFET_DD_STD alias Student
+persistent table zfet_t_demo
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( numbering : managed, readonly ) Id;
+
+
+  mapping for zfet_t_demo{
+  Id = id;
+  Firstname = firstname;
+  Lastname = lastname;
+  Age = age;
+  Course = course;
+  Courseduration = courseduration;
+  Status = status;
+  Gender = gender;
+  Dob = dob;
+  lastchangedat = lastchangedat;
+  Locallastchangedat = locallastchangedat;
+  }
+}

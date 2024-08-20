@@ -1,0 +1,65 @@
+unmanaged;
+//strict ( 2 );
+
+define behavior for ZFET_DD_TRAVEL alias Travel
+ implementation in class zbp_fet_dd_travel unique
+//late numbering
+lock master
+//authorization master ( instance )
+etag master Lastchangedat
+{
+  create;
+  update;
+  delete;
+  association _Booking { create; }
+
+  field ( read only ) TravelID;
+  field ( mandatory ) AgencyID, CustomerID, BeginDate, EndDate;
+
+  mapping for /DMO/TRAVEL control ZFET_S_TRAVEL
+  {
+    TravelId = travel_id;
+    AgencyId = AGENCY_ID;
+    CustomerId = CUSTOMER_ID;
+    BeginDate = BEGIN_DATE;
+    EndDate = END_DATE;
+    BookingFee = BOOKING_FEE;
+    TotalPrice = TOTAL_PRICE;
+    CurrencyCode = CURRENCY_CODE;
+    Description = DESCRIPTION;
+    Status = STATUS;
+    Createdby = CREATEDBY;
+    Createdat = CREATEDAT;
+    Lastchangedby = LASTCHANGEDBY;
+    Lastchangedat = LASTCHANGEDAT;
+  }
+}
+
+define behavior for ZFET_DD_BOOKING alias Booking
+implementation in class zbp_fet_dd_booking unique
+//late numbering
+lock dependent by _Travel
+//authorization dependent by _Travel
+etag dependent by _Travel
+{
+  update;
+  delete;
+  association _Travel;
+
+  field ( read only ) TravelID, BookingID;
+  field ( mandatory ) BookingDate, CustomerID, CarrierId, ConnectionID, FlightDate;
+
+  mapping for /DMO/BOOKING control ZFET_S_BOOKING
+  {
+    TravelId = TRAVEL_ID;
+    BookingId = BOOKING_ID;
+    BookingDate = BOOKING_DATE;
+    CustomerId = CUSTOMER_ID;
+    CarrierId = CARRIER_ID;
+    ConnectionId = CONNECTION_ID;
+    FlightDate = FLIGHT_DATE;
+    FlightPrice = FLIGHT_PRICE;
+    CurrencyCode = CURRENCY_CODE;
+  }
+
+}

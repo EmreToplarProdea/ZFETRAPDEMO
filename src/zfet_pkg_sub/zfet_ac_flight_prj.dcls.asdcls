@@ -1,0 +1,11 @@
+@EndUserText.label: 'Flight Projection Access Control'
+@MappingRole: true
+define role ZFET_AC_FLIGHT_PRJ {
+    grant
+        select
+            on
+                ZFET_DD_FLIGHT_PRJ
+                    where
+                        inheriting conditions from entity ZFET_DD_FLIGHT;
+                        
+}

@@ -1,0 +1,58 @@
+managed implementation in class zbp_fet_dd_inv_hdr unique;
+strict;
+with draft;
+
+define behavior for ZFET_DD_INV_HDR alias Invoice
+persistent table zfet_t_inv_hdr
+draft table zfet_t_d_i_hdr
+lock master
+total etag LocalLastChangedAt
+authorization master ( global )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Invoice;
+  association _Attachments { create; with draft; }
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zfet_t_inv_hdr{
+
+  Invoice = invoice;
+  Comments = comments;
+  VendorId = vendor_id;
+  LocalCreatedBy = local_created_by;
+  LocalLastChangedBy = local_last_changed_by;
+  LocalLastChangedAt = local_last_changed_at;
+  LastChangedAt = last_changed_at;
+
+  }
+}
+
+define behavior for ZFET_DD_INV_ATT alias InvoiceAttachment
+persistent table zfet_t_inv_att
+draft table ZFET_T_D_I_ATT
+lock dependent by _Invoice
+authorization dependent by _Invoice
+etag master LastChangedAt
+{
+  update;
+  delete;
+  field ( readonly ) Invoice;
+  association _Invoice {with draft;}
+
+  mapping for ZFET_T_INV_ATT{
+  Invoice = invoice;
+  Comments = comments;
+  Attachment = attachment;
+  AttachId = attach_id;
+  Filename = filename;
+  Mimetype = mimetype;
+  }
+}

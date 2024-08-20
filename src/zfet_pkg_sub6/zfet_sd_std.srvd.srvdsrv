@@ -1,0 +1,4 @@
+@EndUserText.label: 'SD for Student'
+define service ZFET_SD_STD {
+  expose ZFET_DDC_STD;
+}

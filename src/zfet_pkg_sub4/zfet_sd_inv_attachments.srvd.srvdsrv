@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition for Invoice Attachments'
+define service ZFET_SD_INV_ATTACHMENTS {
+  expose ZFET_PRJ_INV_HDR as Invoice;
+  expose ZFET_PRJ_INV_ATT as InvoiceAttachments;
+  expose /DMO/I_Customer  as Customer;
+}
